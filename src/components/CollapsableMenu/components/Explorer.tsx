@@ -14,8 +14,10 @@ const Explorer = ({ myWork }: { myWork: MyWork[] }) => {
   return (
     <>
       <Header menuTitle="EXPLORER">
-        <button className="hover:bg-gray-300 p-1 rounded-md">
-          <Ellipsis />
+        <button className="hover:bg-gray-300 p-1 sm:p-1 rounded-md min-h-[32px] min-w-[32px] flex items-center justify-center">
+          <div className="w-4 h-4">
+            <Ellipsis />
+          </div>
         </button>
       </Header>
       <div

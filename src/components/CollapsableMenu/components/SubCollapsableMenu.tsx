@@ -59,10 +59,12 @@ const SubCollapsableMenu = ({
           onFocus={handleFocusIn}
           onBlur={handleFocusBlur}
           onClick={handleToggleMenu}
-          className="flex w-full focus:ring-[.5px] active:ring-0 ring-gray-500 ring-opacity-20 py-1 justify-between"
+          className="flex w-full focus:ring-[.5px] active:ring-0 ring-gray-500 ring-opacity-20 py-1 sm:py-1.5 md:py-1 justify-between min-h-[32px] sm:min-h-[36px] md:min-h-[auto] items-center"
         >
-          <div className="flex">
-            {open ? <ChevronDown /> : <ChevronRight />}
+          <div className="flex items-center">
+            <div className="w-2 h-2 sm:w-3 sm:h-3 md:w-4 md:h-4 flex-shrink-0">
+              {open ? <ChevronDown /> : <ChevronRight />}
+            </div>
             <span className="text-xs font-extrabold text-gray-500 ml-1">
               {subMenuTitle}
             </span>
@@ -73,9 +75,11 @@ const SubCollapsableMenu = ({
             {subMenuButtons.map((button, index) => (
               <button
                 key={index}
-                className="hover:bg-gray-300 p-[2px] rounded-md"
+                className="hover:bg-gray-300 p-0.5 sm:p-1 md:p-[2px] rounded-md min-h-[24px] min-w-[24px] sm:min-h-[28px] sm:min-w-[28px] md:min-h-[auto] md:min-w-[auto] flex items-center justify-center"
               >
-                {button.button}
+                <div className="w-2 h-2 sm:w-3 sm:h-3 md:w-4 md:h-4 flex-shrink-0">
+                  {button.button}
+                </div>
               </button>
             ))}
           </div>

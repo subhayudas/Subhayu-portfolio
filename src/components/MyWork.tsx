@@ -8,7 +8,7 @@ import aiBorderSurveillance from "../../public/projects/ai-border-surveillance.p
 import afkDetector from "../../public/projects/afk-detector.png";
 import notibit from "../../public/projects/notibit.png";
 import ieeeWebsite from "../../public/projects/ieee-website.png";
-import appedMe from "../../public/projects/apped-me.png";
+import youtubeVideoSummarizer from "../../public/projects/youtube-video-summarizer.png";
 import Button from "./Button";
 
 interface Project {
@@ -48,6 +48,15 @@ const projects: Project[] = [
       "YOLO V8",
       "SAM",
     ],
+  },
+  {
+    href: "/apps/youtube-video-summarizer",
+    name: "Youtube Video Summarizer",
+    full: true,
+    description:
+      "A scalable Youtube video summarizer that summarizes videos using advanced machine learning. Built with Next.js frontend , it using transriber to transcribe a yt video and then goes through the transcript and summarizes it using a LLM.",
+    image: { src: youtubeVideoSummarizer },
+    tech: ["Next.js", "Node.js", "transriber", "LLM"],
   },
   {
     href: "/apps/afk-detector",
@@ -90,15 +99,6 @@ const projects: Project[] = [
       "Three.js",
       "GSAP",
     ],
-  },
-  {
-    href: "/apps/apped-me",
-    name: "Apped.me",
-    full: true,
-    description:
-      "Animated agency website for launching apps on Play Store. Features modern animations, smooth user experience, and professional design to help clients showcase their mobile applications effectively.",
-    image: { src: appedMe },
-    tech: ["Next.js", "Node.js", "Three.js", "GSAP", "Animation"],
   },
 ];
 

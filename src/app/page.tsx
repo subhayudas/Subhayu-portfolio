@@ -147,7 +147,7 @@ export default function Home() {
         />
         <Container>
           <div className="relative">
-            <Socials className="items-center justify-center py-8" />
+            <Socials className="items-center justify-center py-3 sm:py-4 md:py-8" />
           </div>
           <AboutMe />
         </Container>
@@ -155,7 +155,11 @@ export default function Home() {
       <div id="stars-container" className="relative">
         <Container>
           {content.map((section: contentSection) => (
-            <Section key={section.id} id={section.id} className="pt-24 mt-28">
+            <Section
+              key={section.id}
+              id={section.id}
+              className="pt-12 sm:pt-16 md:pt-20 lg:pt-24 mt-12 sm:mt-16 md:mt-20 lg:mt-28"
+            >
               <Border />
               <SectionHeader {...section.sectionHeader} />
               {section.mainContent}

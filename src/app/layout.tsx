@@ -110,7 +110,7 @@ export default function RootLayout({
           <ActivityBar sections={mainSection} myWork={myWork} />
           <div className="flex w-full flex-col overflow-hidden">
             <TabsContainer />
-            {children}
+            <div className="flex-1 overflow-auto">{children}</div>
           </div>
         </main>
         <BottomBar />

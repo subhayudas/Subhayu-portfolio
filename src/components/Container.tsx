@@ -10,7 +10,7 @@ const Container = ({
   return (
     <div
       className={clsx(
-        "mx-auto max-w-6xl px-4 sm:px-8 lg:px-12 py-6 text-white",
+        "mx-auto max-w-6xl px-2 sm:px-3 md:px-4 lg:px-8 xl:px-12 py-3 sm:py-4 md:py-6 text-white",
         className,
       )}
     >

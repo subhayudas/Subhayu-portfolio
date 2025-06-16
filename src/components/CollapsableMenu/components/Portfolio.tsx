@@ -190,7 +190,7 @@ const Portfolio = ({ myWork }: { myWork: MyWork[] }) => {
 };
 
 const itemsCSS =
-  "flex w-full hover:bg-dark_border items-center py-[2px] cursor-pointer transition-all duration-200";
+  "flex w-full hover:bg-dark_border items-center py-[2px] sm:py-[3px] md:py-[2px] cursor-pointer transition-all duration-200 min-h-[32px] sm:min-h-[36px] md:min-h-[auto]";
 
 interface FolderProps {
   name: string;
