@@ -123,6 +123,35 @@ const content: contentSection[] = [
 export default function Home() {
   return (
     <div className="w-full overflow-y-auto overflow-x-hidden">
+      {/* SEO-optimized hidden content for search engines */}
+      <div className="sr-only">
+        <h1>
+          Subhayu Das - Software Engineer | Full Stack Developer | AI/ML Expert
+        </h1>
+        <p>
+          Subhayu Das is an experienced Software Engineer and Full Stack
+          Developer specializing in AI/ML, Computer Vision, React, Next.js,
+          Python, and TensorFlow. Available for hire for software development,
+          web development, and AI projects. Expert in recruitment-ready coding
+          solutions and innovative tech projects.
+        </p>
+        <p>
+          Looking to hire a Software Engineer? Subhayu Das offers professional
+          software development services including full stack web development,
+          AI/ML solutions, computer vision applications, and modern web
+          technologies. Perfect candidate for software engineer recruitment and
+          tech talent acquisition.
+        </p>
+        <p>
+          Skills: Software Engineering, Full Stack Development, Frontend
+          Development, Backend Development, AI/ML Engineering, Machine Learning,
+          Computer Vision, React Development, Next.js Development, TypeScript
+          Development, Python Development, JavaScript Development, TensorFlow,
+          Node.js, Web Development, Mobile App Development, Software Development
+          Services, Custom Software Development.
+        </p>
+      </div>
+
       <Section id={sections[0].id}>
         <Hero
           title={
@@ -130,7 +159,7 @@ export default function Home() {
               Subhayu Das
             </span>
           }
-          subtitle="Software Developer specializing in Full Stack Development, AI/ML, and Computer Vision with a passion for innovative solutions."
+          subtitle="Experienced Software Engineer specializing in Full Stack Development, AI/ML, and Computer Vision. Available for hire for innovative software development projects and recruitment opportunities."
           actions={[
             {
               label: "View My Work",
