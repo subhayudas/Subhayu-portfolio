@@ -38,3 +38,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Google service account credentials
+google-service-account.json
+
+# Generated URL files
+portfolio-urls.txt
+portfolio-urls.json

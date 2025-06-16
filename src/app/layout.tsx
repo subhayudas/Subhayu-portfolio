@@ -23,6 +23,50 @@ export const metadata: Metadata = {
   title: "Subhayu Das - Portfolio",
   description:
     "Software Developer specializing in Full Stack Development, AI/ML, and Computer Vision. Explore my innovative projects and technical expertise.",
+  keywords: [
+    "Subhayu Das",
+    "Software Developer",
+    "Full Stack Developer",
+    "AI/ML Engineer",
+    "Computer Vision",
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Python",
+    "TensorFlow",
+    "Portfolio"
+  ],
+  authors: [{ name: "Subhayu Das" }],
+  creator: "Subhayu Das",
+  publisher: "Subhayu Das",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://subhayudas.com', // Replace with your actual domain
+    title: 'Subhayu Das - Software Developer Portfolio',
+    description: 'Software Developer specializing in Full Stack Development, AI/ML, and Computer Vision. Explore my innovative projects and technical expertise.',
+    siteName: 'Subhayu Das Portfolio',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Subhayu Das - Software Developer Portfolio',
+    description: 'Software Developer specializing in Full Stack Development, AI/ML, and Computer Vision.',
+    creator: '@your-twitter-handle', // Replace with your Twitter handle
+  },
+  verification: {
+    google: 'your-google-verification-code', // Add your Google Search Console verification code
+  },
 };
 
 export interface MyWork {
