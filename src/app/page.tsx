@@ -2,13 +2,13 @@ import AboutMe from "@/components/AboutMe";
 import Border from "@/components/Border";
 import ContactMe from "@/components/ContactMe";
 import Container from "@/components/Container";
-import { FadeIn } from "@/components/FadeIn";
+import { Hero } from "@/components/Hero";
 import MyWork from "@/components/MyWork";
 import Section from "@/components/Section";
 import SectionHeader from "@/components/SectionHeader";
 import Skills from "@/components/Skills";
 import Socials from "@/components/Socials";
-import { BackgroundLines } from "@/components/ui/background-lines";
+
 import WorkExperience from "@/components/WorkExperience";
 import { Archive, BookOpen, BriefCase, Envelope } from "@/icons";
 
@@ -124,21 +124,31 @@ export default function Home() {
   return (
     <div className="w-full overflow-y-auto overflow-x-hidden">
       <Section id={sections[0].id}>
+        <Hero
+          title={
+            <span className="bg-clip-text text-transparent bg-gradient-to-b from-neutral-600 to-white">
+              Subhayu Das
+            </span>
+          }
+          subtitle="Software Developer specializing in Full Stack Development, AI/ML, and Computer Vision with a passion for innovative solutions."
+          actions={[
+            {
+              label: "View My Work",
+              href: "#my-work",
+              variant: "default",
+            },
+            {
+              label: "Contact Me",
+              href: "#contact",
+              variant: "outline",
+            },
+          ]}
+          className="min-h-screen"
+        />
         <Container>
-          <BackgroundLines className="min-h-screen relative">
-            <FadeIn className="max-w-5xl pt-60 md:pt-[20vh] 2xl:pt-[30vh]">
-              <h2 className="bg-clip-text text-transparent text-center bg-gradient-to-b from-neutral-900 to-neutral-700 dark:from-neutral-600 dark:to-white text-4xl md:text-7xl lg:text-7xl py-2 md:py-10 relative z-20 font-bold tracking-tight">
-                Subhayu Das
-              </h2>
-              <p className="max-w-xl mx-auto text-md md:text-lg text-neutral-700 dark:text-neutral-400 text-center">
-                Software Developer specializing in Full Stack Development,
-                AI/ML, and Computer Vision with a passion for innovative
-                solutions.
-              </p>
-            </FadeIn>
-            <div className="mouse"></div>
-            <Socials className="items-center justify-center" />
-          </BackgroundLines>
+          <div className="relative">
+            <Socials className="items-center justify-center py-8" />
+          </div>
           <AboutMe />
         </Container>
       </Section>
