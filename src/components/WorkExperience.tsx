@@ -19,6 +19,71 @@ interface Experience {
 
 const experience: Experience[] = [
   {
+    title: "Hirebuddy | SWE Intern",
+    date: "June 2025 - Present",
+    description: [
+      {
+        text: "Worked as a Software Engineer Intern, contributing to the development of a AI powered Resume builder and hiring platform",
+      },
+      {
+        text: "Responsibilities:",
+        subText: [
+          "Developed a hiring platform for startups using React.js, Node.js, and MongoDB.",
+          "Implemented a job portal with features like job posting, application tracking, and candidate management.",
+          "Built a candidate profile management system to streamline the hiring process.",
+          "Developed a job application form with validation and submission functionality.",
+        ],
+      },
+    ],
+    image: {
+      url: "/workExperience/hirebuddy_logo.png",
+      height: 96,
+      width: 96,
+      className: "",
+    },
+    tech: [
+      "Community Leadership",
+      "Technical Training",
+      "Event Management",
+      "Mentoring",
+      "Public Speaking",
+    ],
+  },
+  
+  {
+    title: "UpThrive | SDE Intern",
+    date: "April 2025 - Present",
+    description: [
+      {
+        text: "Worked as a Software Development Engineer Intern, contributing to healthcare technology solutions and frontend development.",
+      },
+      {
+        text: "Key Achievements:",
+        subText: [
+          "Developed a scalable pipeline for healthcare facility appointment booking system.",
+          "Created frontend using Next.js to enhance user experience and improve overall system usability.",
+          "Collaborated with cross-functional teams to deliver robust healthcare solutions.",
+          "Implemented responsive design principles and modern web development practices.",
+        ],
+      },
+    ],
+    image: {
+      url: "/workExperience/upthrive_logo.png",
+      height: 96,
+      width: 96,
+      className: "",
+    },
+    tech: [
+      "Next.js",
+      "React.js",
+      "TypeScript",
+      "Node.js",
+      "Healthcare Tech",
+      "Frontend Development",
+      "API Integration",
+    ],
+  },
+  {
     title: "Upwork | Remote Developer (Freelancer, Contractual)",
     date: "Dec 2024 - Present",
     description: [
@@ -51,70 +116,7 @@ const experience: Experience[] = [
       "Full Stack Development",
     ],
   },
-  {
-    title: "UpThrive | SDE Intern",
-    date: "Jan 2019 - Present",
-    description: [
-      {
-        text: "Worked as a Software Development Engineer Intern, contributing to healthcare technology solutions and frontend development.",
-      },
-      {
-        text: "Key Achievements:",
-        subText: [
-          "Developed a scalable pipeline for healthcare facility appointment booking system.",
-          "Created frontend using Next.js to enhance user experience and improve overall system usability.",
-          "Collaborated with cross-functional teams to deliver robust healthcare solutions.",
-          "Implemented responsive design principles and modern web development practices.",
-        ],
-      },
-    ],
-    image: {
-      url: "/workExperience/upthrive_logo.png",
-      height: 96,
-      width: 96,
-      className: "",
-    },
-    tech: [
-      "Next.js",
-      "React.js",
-      "TypeScript",
-      "Node.js",
-      "Healthcare Tech",
-      "Frontend Development",
-      "API Integration",
-    ],
-  },
-  {
-    title: "Developer Student Clubs NSEC | Community Lead",
-    date: "April 2025 - Present",
-    description: [
-      {
-        text: "Leading technical community initiatives and conducting training programs for students.",
-      },
-      {
-        text: "Responsibilities:",
-        subText: [
-          "Conducted online and offline technical & soft-skills training impacting over 3000 students.",
-          "Organized workshops on modern web development, AI/ML, and computer vision.",
-          "Mentored students in various technical projects and career development.",
-          "Built and maintained community engagement through events and technical sessions.",
-        ],
-      },
-    ],
-    image: {
-      url: "/workExperience/dsc_logo.png",
-      height: 96,
-      width: 96,
-      className: "",
-    },
-    tech: [
-      "Community Leadership",
-      "Technical Training",
-      "Event Management",
-      "Mentoring",
-      "Public Speaking",
-    ],
-  },
+  
 ];
 
 const WorkExperience = () => {
