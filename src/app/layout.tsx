@@ -20,7 +20,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://subhayudas.com'),
+  metadataBase: new URL("https://subhayudas.com"),
   title: {
     default:
       "Subhayu Das - Software Engineer | Full Stack Developer | AI/ML Expert",
