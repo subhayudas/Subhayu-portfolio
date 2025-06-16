@@ -49,7 +49,6 @@ const experience: Experience[] = [
       "Public Speaking",
     ],
   },
-  
   {
     title: "UpThrive | SDE Intern",
     date: "April 2025 - Present",
@@ -116,7 +115,6 @@ const experience: Experience[] = [
       "Full Stack Development",
     ],
   },
-  
 ];
 
 const WorkExperience = () => {

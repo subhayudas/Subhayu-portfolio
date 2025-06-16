@@ -22,23 +22,23 @@ const skills = [
       },
       {
         name: "C++",
-        image: "/logos/cpp-logo.png",
+        image: "/logos/cpp_logo.png",
       },
       {
         name: "C",
-        image: "/logos/c-logo.png",
+        image: "/logos/c_logo.png",
       },
       {
         name: "Java",
-        image: "/logos/java-logo.png",
+        image: "/logos/java_logo.png",
       },
       {
         name: "SQL",
-        image: "/logos/sql-logo.png",
+        image: "/logos/sql_logo.png",
       },
       {
         name: "PHP",
-        image: "/logos/php-logo.png",
+        image: "/logos/php_logo.png",
       },
       {
         name: "Solidity",
