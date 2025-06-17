@@ -30,6 +30,9 @@ export const metadata: Metadata = {
     "Subhayu Das - Experienced Software Engineer and Full Stack Developer specializing in AI/ML, Computer Vision, React, Next.js, Python, and TensorFlow. Available for hire for software development, web development, and AI projects. Expert in recruitment-ready coding solutions and innovative tech projects.",
   keywords: [
     // Primary keywords
+    "subhayu das",
+    "Subhayu Das",
+    "subhayudas",
     "Subhayu Das",
     "Subhayu Das Software Engineer",
     "Subhayu Das Developer",
