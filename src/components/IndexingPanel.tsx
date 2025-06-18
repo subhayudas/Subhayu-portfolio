@@ -282,9 +282,9 @@ export default function IndexingPanel() {
         </div>
         <div className="mt-4 p-3 bg-blue-100 rounded-lg">
           <p className="text-sm text-blue-800">
-            <strong>💡 Tip:</strong> Use "Quick Update" after changing metadata,
-            favicon, or content. It pings your sitemap and submits priority URLs
-            for immediate re-crawling.
+            <strong>💡 Tip:</strong> Use &quot;Quick Update&quot; after changing
+            metadata, favicon, or content. It pings your sitemap and submits
+            priority URLs for immediate re-crawling.
           </p>
         </div>
       </div>

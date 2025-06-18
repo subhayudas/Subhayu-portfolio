@@ -117,8 +117,12 @@ export async function pingSitemapToGoogle(sitemapUrl: string) {
 // Enhanced function to trigger complete re-indexing
 export async function triggerCompleteReindexing(baseUrl: string) {
   const results = {
-    sitemapPing: null as any,
-    urlSubmissions: [] as any[],
+    sitemapPing: null as { success: boolean; message: string } | null,
+    urlSubmissions: [] as Array<{
+      url: string;
+      success: boolean;
+      message: string;
+    }>,
     summary: {
       totalUrls: 0,
       successfulSubmissions: 0,
