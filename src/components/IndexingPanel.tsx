@@ -7,6 +7,16 @@ interface IndexingResult {
   message: string;
   error?: string;
   data?: Record<string, unknown>;
+  sitemapPing?: {
+    success: boolean;
+    message: string;
+  };
+  urlSubmissions?: Array<{
+    url: string;
+    success: boolean;
+    message: string;
+  }>;
+  results?: IndexingResult[];
 }
 
 export default function IndexingPanel() {
@@ -124,15 +134,160 @@ export default function IndexingPanel() {
     }
   };
 
+  // New function for quick update
+  const triggerQuickUpdate = async () => {
+    setLoading(true);
+    try {
+      const response = await fetch("/api/indexing", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          action: "quick-update",
+          baseUrl: "https://subhayudas.com",
+        }),
+      });
+
+      const result = await response.json();
+      setResults((prev) => [result, ...prev]);
+    } catch (error) {
+      console.error("Error:", error);
+      setResults((prev) => [
+        {
+          success: false,
+          message: "Failed to trigger quick update",
+          error: error instanceof Error ? error.message : "Unknown error",
+        },
+        ...prev,
+      ]);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // New function for complete reindexing
+  const triggerCompleteReindex = async () => {
+    if (!confirm("This will submit all pages for re-indexing. Continue?")) {
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const response = await fetch("/api/indexing", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          action: "complete-reindex",
+          baseUrl: "https://subhayudas.com",
+        }),
+      });
+
+      const result = await response.json();
+      setResults((prev) => [result, ...prev]);
+    } catch (error) {
+      console.error("Error:", error);
+      setResults((prev) => [
+        {
+          success: false,
+          message: "Failed to trigger complete reindex",
+          error: error instanceof Error ? error.message : "Unknown error",
+        },
+        ...prev,
+      ]);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // New function for sitemap ping
+  const pingSitemap = async () => {
+    setLoading(true);
+    try {
+      const response = await fetch("/api/indexing", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          action: "ping-sitemap",
+          url: "https://subhayudas.com/sitemap.xml",
+        }),
+      });
+
+      const result = await response.json();
+      setResults((prev) => [result, ...prev]);
+    } catch (error) {
+      console.error("Error:", error);
+      setResults((prev) => [
+        {
+          success: false,
+          message: "Failed to ping sitemap",
+          error: error instanceof Error ? error.message : "Unknown error",
+        },
+        ...prev,
+      ]);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const clearResults = () => {
     setResults([]);
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-lg">
-      <h2 className="text-2xl font-bold mb-6 text-gray-800">
-        Google Indexing Panel
+    <div className="max-w-6xl mx-auto p-6 bg-white rounded-lg shadow-lg">
+      <h2 className="text-3xl font-bold mb-6 text-gray-800">
+        Google Search Console Indexing Panel
       </h2>
+
+      {/* Quick Actions Section */}
+      <div className="mb-8 p-6 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg border border-blue-200">
+        <h3 className="text-xl font-semibold mb-4 text-gray-700 flex items-center">
+          <span className="mr-2">⚡</span>
+          Quick Actions (Recommended for Metadata/Favicon Updates)
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <button
+            onClick={triggerQuickUpdate}
+            disabled={loading}
+            className="px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg hover:from-blue-600 hover:to-blue-700 disabled:opacity-50 font-medium shadow-md transition-all duration-200 transform hover:scale-105"
+          >
+            🚀 Quick Update
+            <div className="text-xs mt-1 opacity-90">
+              Sitemap + Priority URLs
+            </div>
+          </button>
+          <button
+            onClick={pingSitemap}
+            disabled={loading}
+            className="px-6 py-3 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-lg hover:from-green-600 hover:to-green-700 disabled:opacity-50 font-medium shadow-md transition-all duration-200 transform hover:scale-105"
+          >
+            📡 Ping Sitemap
+            <div className="text-xs mt-1 opacity-90">
+              Notify Google of changes
+            </div>
+          </button>
+          <button
+            onClick={triggerCompleteReindex}
+            disabled={loading}
+            className="px-6 py-3 bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-lg hover:from-purple-600 hover:to-purple-700 disabled:opacity-50 font-medium shadow-md transition-all duration-200 transform hover:scale-105"
+          >
+            🔄 Complete Reindex
+            <div className="text-xs mt-1 opacity-90">All pages (slower)</div>
+          </button>
+        </div>
+        <div className="mt-4 p-3 bg-blue-100 rounded-lg">
+          <p className="text-sm text-blue-800">
+            <strong>💡 Tip:</strong> Use "Quick Update" after changing metadata,
+            favicon, or content. It pings your sitemap and submits priority URLs
+            for immediate re-crawling.
+          </p>
+        </div>
+      </div>
 
       {/* Single URL Section */}
       <div className="mb-8">
@@ -198,17 +353,17 @@ export default function IndexingPanel() {
         </div>
 
         {loading && (
-          <div className="text-center py-4">
-            <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500"></div>
-            <p className="mt-2 text-gray-600">Processing...</p>
+          <div className="flex items-center justify-center py-8">
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500"></div>
+            <span className="ml-2 text-gray-600">Processing...</span>
           </div>
         )}
 
-        <div className="space-y-3 max-h-96 overflow-y-auto">
+        <div className="space-y-4 max-h-96 overflow-y-auto">
           {results.map((result, index) => (
             <div
               key={index}
-              className={`p-4 rounded-md border ${
+              className={`p-4 rounded-lg border ${
                 result.success
                   ? "bg-green-50 border-green-200"
                   : "bg-red-50 border-red-200"
@@ -216,64 +371,78 @@ export default function IndexingPanel() {
             >
               <div className="flex items-start justify-between">
                 <div className="flex-1">
-                  <p
-                    className={`font-medium ${
-                      result.success ? "text-green-800" : "text-red-800"
-                    }`}
-                  >
-                    {result.message}
-                  </p>
-                  {result.error && (
-                    <p className="text-red-600 text-sm mt-1">{result.error}</p>
+                  <div className="flex items-center mb-2">
+                    <span
+                      className={`inline-block w-3 h-3 rounded-full mr-2 ${
+                        result.success ? "bg-green-500" : "bg-red-500"
+                      }`}
+                    ></span>
+                    <span className="font-medium text-gray-800">
+                      {result.success ? "Success" : "Failed"}
+                    </span>
+                  </div>
+                  <p className="text-sm text-gray-700 mb-2">{result.message}</p>
+
+                  {/* Enhanced result display for quick update */}
+                  {result.sitemapPing && (
+                    <div className="mt-2 p-2 bg-white rounded border">
+                      <div className="text-xs font-medium text-gray-600 mb-1">
+                        Sitemap Ping:
+                      </div>
+                      <div
+                        className={`text-xs ${result.sitemapPing.success ? "text-green-600" : "text-red-600"}`}
+                      >
+                        {result.sitemapPing.success ? "✅" : "❌"}{" "}
+                        {result.sitemapPing.message}
+                      </div>
+                    </div>
                   )}
-                  {result.data && (
-                    <details className="mt-2">
-                      <summary className="cursor-pointer text-sm text-gray-600">
-                        View Details
-                      </summary>
-                      <pre className="mt-2 text-xs bg-gray-100 p-2 rounded overflow-x-auto">
-                        {JSON.stringify(result.data, null, 2)}
-                      </pre>
-                    </details>
+
+                  {result.urlSubmissions && (
+                    <div className="mt-2 p-2 bg-white rounded border">
+                      <div className="text-xs font-medium text-gray-600 mb-1">
+                        URL Submissions:
+                      </div>
+                      <div className="space-y-1">
+                        {result.urlSubmissions.map((submission, idx) => (
+                          <div key={idx} className="text-xs">
+                            <span
+                              className={
+                                submission.success
+                                  ? "text-green-600"
+                                  : "text-red-600"
+                              }
+                            >
+                              {submission.success ? "✅" : "❌"}
+                            </span>
+                            <span className="ml-1 text-gray-600">
+                              {submission.url}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {result.error && (
+                    <p className="text-xs text-red-600 mt-1">
+                      Error: {result.error}
+                    </p>
                   )}
                 </div>
-                <span
-                  className={`ml-2 px-2 py-1 rounded text-xs font-medium ${
-                    result.success
-                      ? "bg-green-100 text-green-800"
-                      : "bg-red-100 text-red-800"
-                  }`}
-                >
-                  {result.success ? "Success" : "Error"}
+                <span className="text-xs text-gray-500 ml-4">
+                  {new Date().toLocaleTimeString()}
                 </span>
               </div>
             </div>
           ))}
         </div>
-      </div>
 
-      {/* Instructions */}
-      <div className="mt-8 p-4 bg-blue-50 border border-blue-200 rounded-md">
-        <h4 className="font-semibold text-blue-800 mb-2">Instructions:</h4>
-        <ul className="text-blue-700 text-sm space-y-1">
-          <li>
-            • Make sure your Google service account JSON file is placed in the
-            root directory as `google-service-account.json`
-          </li>
-          <li>
-            • The service account must have access to Google Search Console for
-            your domain
-          </li>
-          <li>• You can submit individual URLs or multiple URLs at once</li>
-          <li>
-            • Use &ldquo;Check Status&rdquo; to see the current indexing status
-            of a URL
-          </li>
-          <li>
-            • There may be rate limits, so multiple URLs are processed with
-            delays
-          </li>
-        </ul>
+        {results.length === 0 && !loading && (
+          <div className="text-center py-8 text-gray-500">
+            No results yet. Use the actions above to start indexing.
+          </div>
+        )}
       </div>
     </div>
   );

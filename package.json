@@ -7,7 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint:fix": "next lint --fix"
+    "lint:fix": "next lint --fix",
+    "index:quick": "node scripts/quick-index-update.js quick",
+    "index:complete": "node scripts/quick-index-update.js complete",
+    "index:local": "node scripts/quick-index-update.js quick --local"
   },
   "dependencies": {
     "clsx": "^2.1.1",
