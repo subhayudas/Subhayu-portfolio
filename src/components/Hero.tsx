@@ -15,7 +15,9 @@ interface HeroAction {
     | "secondary"
     | "ghost"
     | "link"
-    | "destructive";
+    | "destructive"
+    | "resume";
+  onClick?: () => void;
 }
 
 interface HeroProps extends Omit<React.HTMLAttributes<HTMLElement>, "title"> {
@@ -156,10 +158,19 @@ const Hero = React.forwardRef<HTMLElement, HeroProps>(
                   <Button
                     key={index}
                     variant={action.variant || "default"}
-                    asChild
-                    className="w-full sm:w-auto min-h-[40px] sm:min-h-[44px] text-sm sm:text-base"
+                    asChild={!action.onClick}
+                    className={cn(
+                      "w-full sm:w-auto min-h-[44px] sm:min-h-[48px] text-sm sm:text-base font-semibold",
+                      action.variant === "resume" &&
+                        "px-6 sm:px-8 py-3 sm:py-4",
+                    )}
+                    onClick={action.onClick}
                   >
-                    <Link href={action.href}>{action.label}</Link>
+                    {action.onClick ? (
+                      action.label
+                    ) : (
+                      <Link href={action.href}>{action.label}</Link>
+                    )}
                   </Button>
                 ))}
               </div>

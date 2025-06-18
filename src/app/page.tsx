@@ -1,3 +1,6 @@
+"use client";
+
+import React from "react";
 import AboutMe from "@/components/AboutMe";
 import Border from "@/components/Border";
 import ContactMe from "@/components/ContactMe";
@@ -121,6 +124,10 @@ const content: contentSection[] = [
 ];
 
 export default function Home() {
+  const handleResumeClick = () => {
+    window.open("/Subhayu%20Das%20Resume.pdf", "_blank");
+  };
+
   return (
     <div className="w-full overflow-y-auto overflow-x-hidden">
       {/* SEO-optimized hidden content for search engines */}
@@ -162,9 +169,10 @@ export default function Home() {
           subtitle="Experienced Software Engineer specializing in Full Stack Development, AI/ML, and Computer Vision. Available for hire for innovative software development projects and recruitment opportunities."
           actions={[
             {
-              label: "View My Work",
-              href: "#my-work",
-              variant: "default",
+              label: "📄 View My Resume",
+              href: "#",
+              variant: "resume",
+              onClick: handleResumeClick,
             },
             {
               label: "Contact Me",
