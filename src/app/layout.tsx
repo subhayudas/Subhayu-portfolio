@@ -126,13 +126,13 @@ export const metadata: Metadata = {
       "Subhayu Das - Software Engineer | Full Stack Developer | AI/ML Expert",
     description:
       "Experienced Software Engineer specializing in Full Stack Development, AI/ML, and Computer Vision. Available for hire for innovative software development projects. Expert in React, Next.js, Python, TensorFlow, and modern web technologies.",
-    siteName: "Subhayu Das - Software Engineer Portfolio",
+    siteName: "Subhayu Das",
     images: [
       {
         url: "https://subhayudas.com/opengraph-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Subhayu Das - Software Engineer Portfolio",
+        alt: "Subhayu Das",
       },
     ],
   },
