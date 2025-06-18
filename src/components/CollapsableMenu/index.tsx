@@ -2,6 +2,10 @@
 
 import clsx from "clsx";
 import Explorer from "./components/Explorer";
+import SearchPanel from "./components/SearchPanel";
+import SourceControlPanel from "./components/SourceControlPanel";
+import DebugPanel from "./components/DebugPanel";
+import ExtensionsPanel from "./components/ExtensionsPanel";
 import useExpandableStore, { Menu } from "@/lib/store/useExpandableStore";
 import { MyWork } from "@/app/layout";
 
@@ -18,6 +22,10 @@ const CollapsableMenu = ({ myWork }: { myWork: MyWork[] }) => {
       )}
     >
       {currentMenu === Menu.EXPLORER && <Explorer myWork={myWork} />}
+      {currentMenu === Menu.SEARCH && <SearchPanel />}
+      {currentMenu === Menu.SOURCE_CONTROL && <SourceControlPanel />}
+      {currentMenu === Menu.DEBUG && <DebugPanel />}
+      {currentMenu === Menu.EXTENSIONS && <ExtensionsPanel />}
     </div>
   );
 };

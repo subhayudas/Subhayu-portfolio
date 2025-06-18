@@ -15,6 +15,39 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Sidebar component utilities */
+@layer utilities {
+  .sidebar-container {
+    @apply flex flex-col h-full w-full overflow-hidden;
+  }
+  
+  .sidebar-content {
+    @apply flex flex-col flex-1 overflow-hidden;
+  }
+  
+  .sidebar-scrollable {
+    @apply flex-1 overflow-y-auto;
+  }
+  
+  .sidebar-text-truncate {
+    @apply truncate max-w-full;
+  }
+  
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
 /* https://css-tricks.com/custom-scrollbars-in-webkit/ */
 
 ::-webkit-scrollbar {
