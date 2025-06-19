@@ -8,7 +8,7 @@ import aiBorderSurveillance from "../../public/projects/ai-border-surveillance.p
 import afkDetector from "../../public/projects/afk-detector.png";
 import notibit from "../../public/projects/notibit.png";
 import ieeeWebsite from "../../public/projects/ieee-website.png";
-import listAgain from "../../public/projects/listAgain.png";
+import listAgain from "../../public/projects/ListAgain.png";
 import youtubeVideoSummarizer from "../../public/projects/youtube-video-summarizer.png";
 import Button from "./Button";
 
