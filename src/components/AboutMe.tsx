@@ -12,12 +12,12 @@ const AboutMe = () => {
   const stats = [
     {
       label: "Years of Experience",
-      value: "2+",
+      value: "4+",
       color: "from-blue-400 to-cyan-400",
     },
     {
       label: "Projects Completed",
-      value: "15+",
+      value: "50+",
       color: "from-purple-400 to-pink-400",
     },
     {
@@ -27,7 +27,7 @@ const AboutMe = () => {
     },
     {
       label: "Students Trained",
-      value: "3000+",
+      value: "300+",
       color: "from-orange-400 to-red-400",
     },
   ];
@@ -99,7 +99,7 @@ const AboutMe = () => {
                 Experienced in building scalable applications, AI-powered
                 solutions, and innovative projects that solve real-world
                 problems. Active contributor to open-source projects and
-                technical communities with a track record of training over 3000
+                technical communities with a track record of training over 300
                 students.
               </p>
             </motion.div>
@@ -127,7 +127,7 @@ const AboutMe = () => {
                       >
                         {stat.value}
                       </div>
-                      <div className="text-sm text-gray-200 mt-1 font-medium">
+                      <div className="text-sm text-white mt-1 font-medium">
                         {stat.label}
                       </div>
                     </div>
@@ -238,7 +238,7 @@ const AboutMe = () => {
                     <div className="flex items-center gap-3">
                       <span className="text-2xl">🌍</span>
                       <span className="text-xl font-semibold text-white">
-                        Jharkhand, India
+                        Kolkata, India
                       </span>
                     </div>
                     <div className="flex items-center gap-3">

@@ -148,7 +148,7 @@ export async function triggerCompleteReindexing(baseUrl: string) {
       `${baseUrl}/apps/afk-detector`,
       `${baseUrl}/apps/notibit`,
       `${baseUrl}/apps/ieee-website`,
-      `${baseUrl}/apps/apped-me`,
+      `${baseUrl}/apps/Youtube-video-summarizer`,
     ];
 
     results.summary.totalUrls = urlsToSubmit.length;

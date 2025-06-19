@@ -250,12 +250,12 @@ export default function RootLayout({
       framework: "react",
     },
     {
-      title: "Apped-me.tsx",
+      title: "Youtube-video-summarizer.tsx",
       description:
         "Animated agency website for app launching services on Play Store, built with Next.js, Node.js, and Three.js with modern animations and user experience.",
       url: "#",
-      pathname: "/apps/apped-me",
-      href: "/apps/apped-me",
+      pathname: "/apps/Youtube-video-summarizer",
+      href: "/apps/Youtube-video-summarizer",
       framework: "react",
     },
   ];

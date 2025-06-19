@@ -34,7 +34,7 @@ const ContactMe = () => {
         </div>
         <div className="flex flex-row items-center gap-4 text-center">
           <span className="text-gray-400">Location:</span>
-          <span className="text-white">Jharkhand, India</span>
+          <span className="text-white">Kolkata, India</span>
         </div>
         <Socials showContactMe={false} />
       </FadeInStagger>

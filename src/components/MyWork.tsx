@@ -8,6 +8,7 @@ import aiBorderSurveillance from "../../public/projects/ai-border-surveillance.p
 import afkDetector from "../../public/projects/afk-detector.png";
 import notibit from "../../public/projects/notibit.png";
 import ieeeWebsite from "../../public/projects/ieee-website.png";
+import listAgain from "../../public/projects/listAgain.png";
 import youtubeVideoSummarizer from "../../public/projects/youtube-video-summarizer.png";
 import Button from "./Button";
 
@@ -24,7 +25,7 @@ interface Project {
 
 const projects: Project[] = [
   {
-    href: "/apps/movie-sentiment-predictor",
+    href: "https://movie-senti.vercel.app",
     name: "Movie Sentiment Predictor",
     full: true,
     description:
@@ -33,7 +34,7 @@ const projects: Project[] = [
     tech: ["React.js", "Python", "Flask", "TensorFlow", "Keras", "LSTM"],
   },
   {
-    href: "/apps/ai-border-surveillance",
+    href: "https://github.com/subhayudas/Border-Surveillance-System",
     name: "AI Border Surveillance System",
     full: true,
     description:
@@ -50,7 +51,7 @@ const projects: Project[] = [
     ],
   },
   {
-    href: "/apps/youtube-video-summarizer",
+    href: "https://ambatosummarize.netlify.app/",
     name: "Youtube Video Summarizer",
     full: true,
     description:
@@ -59,7 +60,7 @@ const projects: Project[] = [
     tech: ["Next.js", "Node.js", "transriber", "LLM"],
   },
   {
-    href: "/apps/afk-detector",
+    href: "https://github.com/subhayudas/afk-detector",
     name: "AFK Detector",
     full: true,
     description:
@@ -75,7 +76,7 @@ const projects: Project[] = [
     ],
   },
   {
-    href: "/apps/notibit",
+    href: "https://notibit.netlify.app",
     name: "Notibit",
     full: true,
     description:
@@ -84,7 +85,7 @@ const projects: Project[] = [
     tech: ["React", "TypeScript", "Three.js", "Node.js", "Supabase"],
   },
   {
-    href: "/apps/ieee-website",
+    href: "https://www.ieeebitmesra.in",
     name: "IEEE Website",
     full: true,
     description:
@@ -98,6 +99,24 @@ const projects: Project[] = [
       "Prisma",
       "Three.js",
       "GSAP",
+    ],
+  },
+  {
+    href: "https://listagain.netlify.app",
+    name: "ListAgain",
+    full: true,
+    description:
+      "A website that allows college students to buy and sell anything and everything they want.",
+    image: { src: listAgain },
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "PostgreSQL",
+      "Prisma",
+      "Supabase",
+      "Tailwind CSS",
+      "Shadcn UI",
     ],
   },
 ];
