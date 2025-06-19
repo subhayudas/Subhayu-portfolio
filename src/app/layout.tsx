@@ -6,7 +6,7 @@ import BottomBar from "@/components/BottomBar";
 import ActivityBar from "@/components/ActivityBar";
 import TabsContainer from "@/components/TabContainer";
 import NavigationChange from "@/components/NavigationChange";
-import { sections } from "./page";
+import { sections } from "@/lib/constants";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
