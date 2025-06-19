@@ -53,11 +53,11 @@ import { TbCircleKeyFilled } from "react-icons/tb";
 
 const staticFiles = [
   { name: ".eslintrc.json", icon: <Eslint /> },
-  { name: ".gitignore", icon: <Git /> },
+  { name: ".gitignore.MyRizz", icon: <Git /> },
   { name: "next.config.js", icon: <NextConfig /> },
   { name: "package-lock.json", icon: <NodeJs /> },
   { name: "package.json", icon: <NodeJs /> },
-  { name: "tailwind.config.ts", icon: <TailwindCSS /> },
+  { name: "not-a-nerd.ts", icon: <TailwindCSS /> },
   { name: "tsconfig.json", icon: <TsConfig /> },
 ];
 
@@ -118,7 +118,7 @@ const Portfolio = ({ myWork }: { myWork: MyWork[] }) => {
       {expanded && (
         <>
           <Folder
-            name=".next"
+            name=".HireMe"
             openIcon={<></>}
             closedIcon={<Next />}
             disabled
@@ -126,7 +126,7 @@ const Portfolio = ({ myWork }: { myWork: MyWork[] }) => {
             segmentActive={false}
           />
           <Folder
-            name="node_modules"
+            name="Job_modules"
             openIcon={<></>}
             closedIcon={<NodeModules />}
             disabled
